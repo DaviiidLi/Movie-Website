@@ -1,0 +1,30 @@
+<div class="form">
+<h2>New Movie</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+<form method="POST" action="add">
+	<div class="form-group">
+		<label for="title">Title:</label>
+		<input type="text" name="title" required>
+	</div>
+	<div class="form-group">
+		<label for="director">Director:</label>
+		<input type="text" name="director" required>
+	</div>
+    <div class="form-group">
+		<label for="stars">Stars: (use comma to split each star)</label>
+        <input type="text" name="stars" required>
+	</div>
+    {{!-- <button id="add-button">+</button> --}}
+    <div class="form-group">
+		<label for="year">Year:</label>
+		<input type="number" name="year" required>
+	</div>
+    <div class="form-group">
+		<label for="length">Length(min):</label>
+		<input type="number" name="length" required>
+	</div>
+	<button type="submit">Add</button>
+</form>
+</div>

@@ -1,0 +1,30 @@
+<div class="movie-detail">
+    <h2>{{movie.title}}</h2>
+    <p>Director: {{movie.director}}</p>
+    <p>Stars: {{movie.stars}}</p>
+    <p>Year: {{movie.year}}</p>
+    <p>Length: {{movie.length}} minutes</p>
+    <br><br>
+    <h2>Reviews</h2>
+    <div class="blackline"></div>
+    <br>
+    {{#if user}}
+        <form method="POST" action="review">
+            <textarea class="textbox" id="textbox" name="textbox" rows="8" cols="50" placeholder="Leave your comment..." required></textarea>
+            <input type="submit" value="Add">
+        </form>
+    {{else}}
+        <button onclick="redirectToURL()">Login to add a review</button>
+    {{/if}}
+    <br><br><br><br>
+    {{#each reviews}}
+        <div class="blackline"></div>
+        <p>{{this.user}} -- {{this.date}}</p>
+        <p>{{this.content}}</p>
+    {{/each}}
+</div>
+<script>
+    function redirectToURL() {
+        window.location.href = "/login";
+    }
+</script>

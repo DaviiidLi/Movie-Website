@@ -1,0 +1,14 @@
+<div class="movies-container">
+  {{#if movies.length}}
+    {{#each movies}}
+    <div class="movie">
+      <a href="/movie/{{slug}}"><h2>{{ title }}</h2></a>
+      <p>Year: {{ year }}</p>
+      <p>Director: {{ director }}</p>
+      <p>Stars: {{ stars }}</p>
+    </div>
+    {{/each}}
+  {{else}}
+    <h2>No movies found!</h2>
+  {{/if}}
+</div>
